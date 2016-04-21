@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js Panoviewer</title>
+    <style>
+        body { margin: 0 }
+        #viewer {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        canvas {
+            margin: 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="viewer"></div>
+    <script src="three.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script src="panoviewer.js"></script>
+    <script>
+        window.pano = new Panoviewer(document.getElementById('viewer'));
+        setTimeout(function () { pano.render() }, 100);
+    </script>
+</body>
+</html>

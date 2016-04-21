@@ -1,0 +1,21 @@
+{
+  "name": "three-panoviewer",
+  "version": "1.0.0-dev",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "browserify src/index.js -t babelify -s Panoviewer --outfile dist/panoviewer.js",
+    "watch": "watchify src/index.js -t babelify -s Panoviewer --outfile dist/panoviewer.js",
+    "serve": "npm run watch & browser-sync start --files='demo/**/*' --server=demo"
+  },
+  "dependencies": {
+    "three": "^0.75.0"
+  },
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.6.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "watchify": "^3.7.0"
+  }
+}
